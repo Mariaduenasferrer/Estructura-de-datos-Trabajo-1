@@ -3,8 +3,6 @@ package ListasSimplementerEnlazadas;
 public class Iterador<T> implements IteradorInterface<T> {
     private Lista<T> lista;
     private Elemento<T> actual;
-    private Elemento<T> previo;
-
 
     public Iterador(Lista<T> lista) {
         this.lista = lista;
@@ -30,17 +28,24 @@ public class Iterador<T> implements IteradorInterface<T> {
 
     @Override
     public void delete() {
-        if (actual == null) {
+        if (actual == null || lista.getCabeza() == null) {
             return;
         }
-        if (previo == null) {
+        if (actual == lista.getCabeza()) {
             lista.setCabeza(actual.getSiguiente());
         } else {
-            previo.setSiguiente(actual.getSiguiente());
+            Elemento<T> actualTemp = (Elemento<T>) lista.getCabeza();
+            while (actualTemp != null && actualTemp.getSiguiente() != actual) {
+                actualTemp = actualTemp.getSiguiente();
+            }
+            if (actualTemp != null) {
+                actualTemp.setSiguiente(actual.getSiguiente());
+            }
         }
-        actual = actual.getSiguiente();
+
         lista.setSize(lista.getSize() - 1);
     }
+
 }
 
 
