@@ -1,9 +1,9 @@
 package PilasyColas;
 
-import ListasSimplementerEnlazadas.ListaSimplementeEnlazada;
+import ListasSimplementerEnlazadas.Lista;
 
 public class Cola<T> {
-    ListaSimplementeEnlazada<T> lista;
+    Lista<T> lista;
 
 
     void enqueue(T elemento){}

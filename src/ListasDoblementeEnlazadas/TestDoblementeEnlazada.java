@@ -2,13 +2,13 @@ package ListasDoblementeEnlazadas;
 
 
 public class TestDoblementeEnlazada {
-    Lista<Integer> lista = new ListaDoblementeEnlazada<>();
-    lista.add(5);
-    lista.add(15);
-    lista.add(25);
-    lista.delete(15);
+    Lista<Integer> Lista = new Lista<>();
+    Lista.add(5);
+    Lista.add(15);
+    Lista.add(25);
+    Lista.delete(15);
     Lista<Integer> resultado = new ArrayLista<>();
-    Iterador<Integer> iterador = lista.getIterador();
+    Iterador<Integer> iterador = Lista.getIterador();
     while (iterador.hasNext()) {
         resultado.add(iterador.next());
     }
