@@ -55,7 +55,7 @@ public class Lista<T> implements ListaInterface<T> {
 
     @Override
     public IteradorInterface<T> getIterador() {
-        return new Iterador<T>(this);
+        return new Iterador<>(this);
     }
 
     @Override

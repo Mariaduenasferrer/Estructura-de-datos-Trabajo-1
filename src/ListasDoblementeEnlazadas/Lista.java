@@ -65,7 +65,7 @@ public class Lista<T> implements ListaIterador<T> {
         return new Iterador<>(this);
     }
     @Override
-    public int getsize(){
+    public int getSize(){
         return size;
     }
     public void setSize(int size){
@@ -89,4 +89,3 @@ public class Lista<T> implements ListaIterador<T> {
         this.cola = (Elemento<T>) elemento;
     }
 }
-

@@ -5,4 +5,11 @@ public class ElementoDiccionario<K,V> {
     V valor;
     ElementoDiccionario<K,V> siguiente;
     ElementoDiccionario<K,V> anterior;
+
+    public ElementoDiccionario(K clave, V valor) {
+        this.clave = clave;
+        this.valor = valor;
+        siguiente = null;
+        anterior = null;
+    }
 }

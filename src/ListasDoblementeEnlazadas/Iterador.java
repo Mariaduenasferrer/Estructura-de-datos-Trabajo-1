@@ -37,7 +37,7 @@ public class Iterador<T> implements IteradorInterface<T> {
             actual.getSiguiente().setAnterior(actual.getAnterior());
         }else{
             lista.setCola((T) actual.getSiguiente());
-            lista.setSize(lista.getsize() - 1);
+            lista.setSize(lista.getSize() - 1);
         }
     }
 }

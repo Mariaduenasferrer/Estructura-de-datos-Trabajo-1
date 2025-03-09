@@ -4,7 +4,7 @@ public interface ListaIterador<T> {
     boolean add(T elemento);
     boolean delete(T elemento);
     IteradorInterface<T> getIterador();
-    int getsize() ;
+    int getSize() ;
     T getcabeza();
     void setCabeza(T elemento);
     T getcola();
