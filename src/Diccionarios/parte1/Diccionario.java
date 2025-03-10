@@ -1,4 +1,4 @@
-package Diccionarios;
+package Diccionarios.parte1;
 
 public interface Diccionario<K,V> {
     boolean add (K clave, V valor);

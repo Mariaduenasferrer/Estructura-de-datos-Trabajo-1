@@ -1,4 +1,4 @@
-package ListasDoblementeEnlazadas;
+package ListasBasicas;
 
 import org.junit.jupiter.api.Test;
 

@@ -1,9 +1,10 @@
-package ListasDoblementeEnlazadas;
+package ListasSimplementeEnlazadas;
 
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
-class ListaTest {
+
+class ListaInterfaceTest {
 
     @Test
     void add() {
@@ -22,22 +23,14 @@ class ListaTest {
     }
 
     @Test
-    void setSize() {
-    }
-
-    @Test
-    void getcabeza() {
-    }
-
-    @Test
     void setCabeza() {
     }
 
     @Test
-    void getcola() {
+    void getCabeza() {
     }
 
     @Test
-    void setCola() {
+    void setSize() {
     }
 }

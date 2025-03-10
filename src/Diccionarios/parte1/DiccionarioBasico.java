@@ -1,4 +1,4 @@
-package Diccionarios;
+package Diccionarios.parte1;
 
 public class DiccionarioBasico<K,V> implements Diccionario<K,V> {
     ElementoDiccionario<K,V> cabeza;

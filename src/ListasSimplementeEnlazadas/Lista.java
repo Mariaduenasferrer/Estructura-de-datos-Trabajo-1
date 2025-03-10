@@ -1,4 +1,4 @@
-package ListasSimplementerEnlazadas;
+package ListasSimplementeEnlazadas;
 
 public class Lista<T> implements ListaInterface<T> {
     private Elemento<T> cabeza;

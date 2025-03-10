@@ -3,9 +3,18 @@ package ListasDoblementeEnlazadas;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
-class TestTest {
+
+class IteradorTest {
 
     @Test
-    void main() {
+    void hasNext() {
+    }
+
+    @Test
+    void next() {
+    }
+
+    @Test
+    void delete() {
     }
 }

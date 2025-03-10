@@ -3,7 +3,8 @@ package ListasDoblementeEnlazadas;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
-class ListaTest {
+
+class ListaIteradorTest {
 
     @Test
     void add() {
@@ -22,10 +23,6 @@ class ListaTest {
     }
 
     @Test
-    void setSize() {
-    }
-
-    @Test
     void getcabeza() {
     }
 
@@ -39,5 +36,9 @@ class ListaTest {
 
     @Test
     void setCola() {
+    }
+
+    @Test
+    void setSize() {
     }
 }

@@ -1,6 +1,6 @@
 package PilasyColas;
 
-import ListasSimplementerEnlazadas.Lista;
+import ListasSimplementeEnlazadas.Lista;
 
 public class Pila<T> {
     Lista<T> lista;

@@ -1,4 +1,4 @@
-package ListasSimplementerEnlazadas;
+package ListasSimplementeEnlazadas;
 
 public interface ListaInterface<T> {
     boolean add(T element);

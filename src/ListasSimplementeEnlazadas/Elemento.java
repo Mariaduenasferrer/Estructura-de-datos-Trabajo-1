@@ -1,4 +1,4 @@
-package ListasSimplementerEnlazadas;
+package ListasSimplementeEnlazadas;
 
 public class Elemento<T> {
     public T dato;

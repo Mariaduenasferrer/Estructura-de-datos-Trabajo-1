@@ -1,4 +1,4 @@
-package Diccionarios;
+package Diccionarios.parte1;
 
 public interface Iterador<T> {
     boolean hasNext();

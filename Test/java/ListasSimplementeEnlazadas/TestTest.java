@@ -1,4 +1,4 @@
-package ListasSimplementerEnlazadas;
+package ListasSimplementeEnlazadas;
 
 import org.junit.jupiter.api.Test;
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package ListasSimplementerEnlazadas;
+package ListasSimplementeEnlazadas;
 
 public class Iterador<T> implements IteradorInterface<T> {
     private Lista<T> lista;
