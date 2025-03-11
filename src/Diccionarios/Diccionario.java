@@ -1,4 +1,4 @@
-package Diccionarios.parte2;
+package Diccionarios;
 
 public interface Diccionario<K, V> {
     void add(ElementoDiccionario<K, V> elemento);

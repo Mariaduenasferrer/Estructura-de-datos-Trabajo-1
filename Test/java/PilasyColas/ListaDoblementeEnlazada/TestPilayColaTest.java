@@ -1,16 +1,12 @@
-package Diccionarios.parte2;
+package PilasyColas.ListaDoblementeEnlazada;
 
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class IteradorTest {
+class TestPilayColaTest {
 
     @Test
-    void hasNext() {
-    }
-
-    @Test
-    void next() {
+    void main() {
     }
 }

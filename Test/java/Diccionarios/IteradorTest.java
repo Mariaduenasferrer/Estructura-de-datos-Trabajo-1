@@ -1,16 +1,16 @@
-package PilasyColas;
+package Diccionarios;
 
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class ColaTest {
+class IteradorTest {
 
     @Test
-    void enqueue() {
+    void hasNext() {
     }
 
     @Test
-    void dequeue() {
+    void next() {
     }
 }

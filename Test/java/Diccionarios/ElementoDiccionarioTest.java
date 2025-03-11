@@ -1,16 +1,16 @@
-package PilasyColas;
+package Diccionarios;
 
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class PilaTest {
+class ElementoDiccionarioTest {
 
     @Test
-    void push() {
+    void getClave() {
     }
 
     @Test
-    void pop() {
+    void getValor() {
     }
 }

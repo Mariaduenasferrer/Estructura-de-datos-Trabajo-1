@@ -1,4 +1,4 @@
-package Diccionarios.parte2;
+package Diccionarios;
 
 public class ElementoDiccionario<K, V> {
     private K clave;

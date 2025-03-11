@@ -1,4 +1,4 @@
-package PilasyColas;
+package PilasyColas.ListaSimplementeEnlazada;
 
 import ListasSimplementeEnlazadas.Lista;
 

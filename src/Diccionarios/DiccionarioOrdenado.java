@@ -1,4 +1,4 @@
-package Diccionarios.parte2;
+package Diccionarios;
 
 import java.util.ArrayList;
 import java.util.List;

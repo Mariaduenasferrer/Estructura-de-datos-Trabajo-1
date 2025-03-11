@@ -1,20 +1,20 @@
-package Diccionarios.parte2;
+package Diccionarios;
 
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class DiccionarioTest {
+class TestTest {
 
     @Test
-    void add() {
+    void assertTrue() {
     }
 
     @Test
-    void delete() {
+    void assertEquals() {
     }
 
     @Test
-    void getIterador() {
+    void main() {
     }
 }

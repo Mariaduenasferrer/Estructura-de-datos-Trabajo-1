@@ -1,4 +1,4 @@
-package PilasyColas;
+package PilasyColas.ListaSimplementeEnlazada;
 
 public class TestPilayCola {
     public static void main(String[] args) {

@@ -1,10 +1,10 @@
-package Diccionarios.parte2;
+package Diccionarios;
 
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class DiccionarioOrdenadoTest {
+class DiccionarioTest {
 
     @Test
     void add() {
