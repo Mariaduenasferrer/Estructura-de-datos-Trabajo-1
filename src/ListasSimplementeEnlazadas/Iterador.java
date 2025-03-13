@@ -1,52 +1,54 @@
 package ListasSimplementeEnlazadas;
 
 public class Iterador<T> implements IteradorInterface<T> {
-    private Lista<T> lista;
-    private Elemento<T> actual;
+    private Elemento<T> actual; // Nodo actual en la lista
+    private Elemento<T> previo; // Nodo previo al actual
+    private Elemento<T> cabeza; // Referencia a la cabeza de la lista
 
-    public Iterador(Lista<T> lista) {
-        this.lista = lista;
-        this.actual = (Elemento<T>) lista.getCabeza();
+    public Iterador(Elemento<T> cabeza) {
+        this.cabeza = cabeza; // Inicializar con la cabeza
+        this.actual = cabeza; // El nodo actual comienza como la cabeza
+        this.previo = null;   // No hay nodo previo al inicio
     }
 
     @Override
     public boolean hasNext() {
-
-        return actual != null;
+        return actual != null; // Hay más elementos si actual no es null
     }
 
     @Override
     public T next() {
         if (!hasNext()) {
-            return null;
-
+            return null; // Si no hay más elementos, devolver null
         }
-        T dato = actual.getDato();
-        actual = actual.getSiguiente();
-        return dato;
+        T dato = actual.getDato(); // Obtener el dato del nodo actual
+        previo = actual;           // Guardar el nodo actual como previo
+        actual = actual.getSiguiente(); // Avanzar al siguiente nodo
+        return dato; // Retornar el dato
     }
 
     @Override
     public void delete() {
-        if (actual == null || lista.getCabeza() == null) {
-            return;
-        }
-        if (actual == lista.getCabeza()) {
-            lista.setCabeza(actual.getSiguiente());
-        } else {
-            Elemento<T> actualTemp = (Elemento<T>) lista.getCabeza();
-            while (actualTemp != null && actualTemp.getSiguiente() != actual) {
-                actualTemp = actualTemp.getSiguiente();
-            }
-            if (actualTemp != null) {
-                actualTemp.setSiguiente(actual.getSiguiente());
-            }
+        if (actual == null) {
+            return; // No se puede eliminar un nodo inexistente
         }
 
-        lista.setSize(lista.getSize() - 1);
+        if (actual == cabeza) {
+            // Si el nodo actual es la cabeza, actualizamos la cabeza
+            cabeza = actual.getSiguiente();
+            actual = cabeza; // Ajustar actual a la nueva cabeza
+        } else if (previo != null) {
+            // Si no es la cabeza, saltamos el nodo actual
+            previo.setSiguiente(actual.getSiguiente());
+            actual = previo.getSiguiente(); // Avanzar al siguiente nodo lógico
+        }
     }
 
+    public Elemento<T> getCabeza() {
+        return cabeza; // Retornar la cabeza de la lista actualizada
+    }
 }
+
 
 
 

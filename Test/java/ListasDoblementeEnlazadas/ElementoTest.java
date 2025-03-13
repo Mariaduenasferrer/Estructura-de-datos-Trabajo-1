@@ -1,32 +1,27 @@
 package ListasDoblementeEnlazadas;
 
+import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-class ElementoTest {
+public class ElementoTest {
 
     @Test
-    void getDato() {
+    public void testConstructorAndGetters() {
+        Elemento<Integer> elemento = new Elemento<>(10);
+        assertEquals(10, elemento.getDato());
+        assertNull(elemento.getAnterior());
+        assertNull(elemento.getSiguiente());
     }
 
     @Test
-    void setDato() {
-    }
+    public void testSetters() {
+        Elemento<String> elemento = new Elemento<>("Dato inicial");
+        elemento.setDato("Dato modificado");
+        elemento.setAnterior(new Elemento<>("Anterior"));
+        elemento.setSiguiente(new Elemento<>("Siguiente"));
 
-    @Test
-    void getAnterior() {
-    }
-
-    @Test
-    void setAnterior() {
-    }
-
-    @Test
-    void getSiguiente() {
-    }
-
-    @Test
-    void setSiguiente() {
+        assertEquals("Dato modificado", elemento.getDato());
+        assertEquals("Anterior", elemento.getAnterior().getDato());
+        assertEquals("Siguiente", elemento.getSiguiente().getDato());
     }
 }

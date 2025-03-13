@@ -40,6 +40,37 @@ class Lista<T> implements ListaInterface<T> {
         return false;
     }
 
+    // Obtener la cabeza
+    public T getCabeza() {
+        if (size > 0) {
+            return (T) elementos[0]; // Devuelve el primer elemento
+        }
+        return null; // Devuelve null si la lista está vacía
+    }
+
+    // Establecer la cabeza
+    public void setCabeza(T nuevoValor) {
+        if (size > 0) {
+            elementos[0] = nuevoValor; // Actualiza el primer elemento
+        }
+    }
+
+    // Obtener la cola
+    public T getCola() {
+        if (size > 0) {
+            return (T) elementos[size - 1]; // Devuelve el último elemento
+        }
+        return null; // Devuelve null si la lista está vacía
+    }
+
+    // Establecer la cola
+    public void setCola(T nuevoValor) {
+        if (size > 0) {
+            elementos[size - 1] = nuevoValor; // Actualiza el último elemento
+        }
+    }
+
+
     @Override
     public Iterador<T> getIterador() {
 

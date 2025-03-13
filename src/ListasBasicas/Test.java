@@ -35,5 +35,8 @@ public class Test{
         while (iterador.hasNext()) {
             System.out.println("Elemento: " + iterador.next());
         }
+
+        System.out.println("Cabeza: " + lista.getCabeza());
+        System.out.println("Cola: " + lista.getCola());
     }
 }

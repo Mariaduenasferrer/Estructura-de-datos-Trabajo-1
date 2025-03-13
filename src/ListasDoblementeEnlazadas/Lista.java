@@ -8,12 +8,12 @@ public class Lista<T> implements ListaIterador<T> {
     public Lista() {
         cabeza = null;
         cola = null;
+        size = 0;
     }
 
     @Override
     public boolean add(T elemento) {
         Elemento<T> nuevoElemento = new Elemento<>(elemento);
-
         if (cabeza == null) {
             cabeza = nuevoElemento;
             cola = nuevoElemento;
@@ -22,7 +22,6 @@ public class Lista<T> implements ListaIterador<T> {
             nuevoElemento.anterior = cola;
             cola = nuevoElemento;
         }
-
         size++;
         return true;
     }
@@ -40,52 +39,70 @@ public class Lista<T> implements ListaIterador<T> {
                     if (cabeza != null) {
                         cabeza.anterior = null;
                     }
-                }
-                else if (actual == cola) {
+                } else if (actual == cola) {
                     cola = actual.anterior;
                     if (cola != null) {
                         cola.siguiente = null;
                     }
-                }
-                else {
+                } else {
                     actual.anterior.siguiente = actual.siguiente;
                     actual.siguiente.anterior = actual.anterior;
                 }
-
                 size--;
                 return true;
             }
             actual = actual.siguiente;
         }
-
         return false;
     }
+
     @Override
     public IteradorInterface<T> getIterador() {
         return new Iterador<>(this);
     }
+
     @Override
-    public int getSize(){
+    public int getSize() {
         return size;
     }
-    public void setSize(int size){
+
+    @Override
+    public void setSize(int size) {
         this.size = size;
     }
-    @Override
 
-    public  T getcabeza(){
-        return (T) cabeza;
-    }
     @Override
-    public void setCabeza(T elemento){
-        this.cabeza = (Elemento<T>) elemento;
+    public T getcabeza() {
+        return (cabeza != null) ? cabeza.dato : null;
     }
+
     @Override
-    public T getcola(){
-        return (T) cola;
+    public void setCabeza(T elemento) {
+        if (cabeza != null) {
+            cabeza.dato = elemento;
+        } else {
+            cabeza = new Elemento<>(elemento);
+            if (cola == null) {
+                cola = cabeza;
+            }
+        }
     }
+
     @Override
-    public void setCola(T elemento){
-        this.cola = (Elemento<T>) elemento;
+    public T getcola() {
+        return (cola != null) ? cola.dato : null;
+    }
+
+    @Override
+    public void setCola(T elemento) {
+        if (cola != null) {
+            cola.dato = elemento;
+        } else {
+            cola = new Elemento<>(elemento);
+            if (cabeza == null) {
+                cabeza = cola;
+            }
+        }
     }
 }
+

@@ -34,5 +34,4 @@ public class Elemento<T> {
         this.siguiente = siguiente;
 
     }
-
 }
