@@ -4,14 +4,16 @@ import ListasDoblementeEnlazadas.Lista;
 import ListasDoblementeEnlazadas.Elemento;
 
 public class Pila<T> {
-    private Lista<T> lista;
+    private Lista<Elemento<T>> lista;
 
     public Pila() {
         lista = new Lista<>();
     }
 
-    public void push(T elemento) {
-        lista.add(elemento); // Agregar al final
+    public void push(T dato) {
+        // Crear un nuevo Elemento<T> y agregarlo al final de la lista
+        Elemento<T> nuevoElemento = new Elemento<>(dato);
+        lista.add(nuevoElemento);
     }
 
     public T pop() {
@@ -19,10 +21,10 @@ public class Pila<T> {
             return null; // Pila vacía
         }
 
-        // Obtener la cola y eliminarla
-        Elemento<T> colaElemento = (Elemento<T>) lista.getcola();
-        T dato = colaElemento.getDato(); // Obtener el dato directamente
-        lista.delete(dato); // Eliminar el elemento
+        // Obtener el último elemento (la "cola") y eliminarlo
+        Elemento<T> colaElemento = lista.getcola();
+        T dato = colaElemento.getDato(); // Obtener el dato del Elemento
+        lista.delete(colaElemento); // Eliminar el Elemento completo de la lista
         return dato; // Retornar el dato
     }
 

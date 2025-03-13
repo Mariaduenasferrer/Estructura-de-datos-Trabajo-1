@@ -12,16 +12,17 @@ public class Cola<T> {
         lista = new Lista<>();
         cabeza = null;
     }
-    public void enqueue(T elemento){
-        if (cola == null){
+    public void enqueue(T elemento) {
+        if (cola == null) {
             lista.add(elemento);
-            cola = elemento;
-            cabeza = elemento;
-        }else{
+            cola = elemento;  // First element becomes cola
+            cabeza = elemento; // First element also becomes cabeza
+        } else {
             lista.add(elemento);
-            cabeza = elemento;
+            cabeza = elemento;  // Update cabeza to the new last element
         }
     }
+
     public T dequeue(){
         if (cola == null){
             return null;

@@ -3,40 +3,62 @@ package PilasyColas.ListaDoblementeEnlazada;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
-public class ColaTest {
+class ColaTest {
 
     @Test
-    public void testCola() {
-        // Crear una cola
+    void enqueue() {
         Cola<Integer> cola = new Cola<>();
-
-        // Comprobar que la cola está vacía al inicio
-        assertTrue(cola.isEmpty(), "La cola debería estar vacía al inicio");
-        assertEquals(0, cola.size(), "El tamaño de la cola debería ser 0 al inicio");
-
-        // Agregar elementos a la cola
         cola.enqueue(10);
         cola.enqueue(20);
         cola.enqueue(30);
 
-        // Verificar que la cola ya no está vacía
-        assertFalse(cola.isEmpty(), "La cola no debería estar vacía después de agregar elementos");
-        assertEquals(3, cola.size(), "El tamaño de la cola debería ser 3");
+        assertEquals(3, cola.size()); // Verifica que se agregaron 3 elementos
+        assertFalse(cola.isEmpty()); // Verifica que la cola no está vacía
+    }
 
-        // Desencolar y verificar el elemento eliminado
-        assertEquals(10, cola.dequeue(), "El primer elemento eliminado debería ser 10");
-        assertEquals(2, cola.size(), "El tamaño de la cola debería ser 2 después de eliminar un elemento");
+    @Test
+    void dequeue() {
+        Cola<Integer> cola = new Cola<>();
+        cola.enqueue(10);
+        cola.enqueue(20);
+        cola.enqueue(30);
 
-        // Desencolar el siguiente elemento
-        assertEquals(20, cola.dequeue(), "El siguiente elemento eliminado debería ser 20");
-        assertEquals(1, cola.size(), "El tamaño de la cola debería ser 1 después de otra eliminación");
+        assertEquals(10, cola.dequeue()); // Extrae el primer elemento
+        assertEquals(20, cola.dequeue()); // Extrae el siguiente
+        assertEquals(1, cola.size()); // Verifica que queda un solo elemento en la cola
+    }
 
-        // Verificar el último elemento
-        assertEquals(30, cola.dequeue(), "El último elemento eliminado debería ser 30");
-        assertTrue(cola.isEmpty(), "La cola debería estar vacía después de eliminar todos los elementos");
-        assertEquals(0, cola.size(), "El tamaño de la cola debería ser 0 al final");
+    @Test
+    void dequeueEmptyQueue() {
+        Cola<Integer> cola = new Cola<>();
 
-        // Intentar desencolar de una cola vacía
-        assertNull(cola.dequeue(), "Debería retornar null al desencolar de una cola vacía");
+        assertNull(cola.dequeue()); // Verifica que extraer de una cola vacía retorna null
+        assertTrue(cola.isEmpty()); // Verifica que la cola sigue vacía
+    }
+
+    @Test
+    void isEmpty() {
+        Cola<Integer> cola = new Cola<>();
+        assertTrue(cola.isEmpty()); // Verifica que la cola está vacía inicialmente
+
+        cola.enqueue(10);
+        assertFalse(cola.isEmpty()); // Verifica que ya no está vacía después de agregar un elemento
+
+        cola.dequeue();
+        assertTrue(cola.isEmpty()); // Verifica que está vacía nuevamente después de eliminar el único elemento
+    }
+
+    @Test
+    void size() {
+        Cola<Integer> cola = new Cola<>();
+        assertEquals(0, cola.size()); // Verifica que el tamaño inicial es 0
+
+        cola.enqueue(10);
+        cola.enqueue(20);
+        assertEquals(2, cola.size()); // Verifica que el tamaño es 2 después de agregar dos elementos
+
+        cola.dequeue();
+        assertEquals(1, cola.size()); // Verifica que el tamaño es 1 después de eliminar un elemento
     }
 }
+
