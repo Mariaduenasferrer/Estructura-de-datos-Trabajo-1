@@ -28,6 +28,7 @@ public class Iterador<T> implements IteradorInterface<T> {
     }
 
     @Override
+
     public void delete() {
         if (actual == null) {
             return; // No se puede eliminar un nodo inexistente
@@ -40,7 +41,7 @@ public class Iterador<T> implements IteradorInterface<T> {
         } else if (previo != null) {
             // Si no es la cabeza, saltamos el nodo actual
             previo.setSiguiente(actual.getSiguiente());
-            actual = previo.getSiguiente(); // Avanzar al siguiente nodo lógico
+            actual = (actual.getSiguiente() != null) ? actual.getSiguiente() : null; // Ajustar actual
         }
     }
 
