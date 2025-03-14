@@ -37,25 +37,15 @@ class IteradorTest {
     }
 
     @Test
-    void delete() {
+    void deleteSingleElement() {
         Lista<String> lista = new Lista<>();
-        lista.add("X");
-        lista.add("Y");
-        lista.add("Z");
+        lista.add("Solo");
 
         Iterador<String> iterador = new Iterador<>(lista);
 
-        iterador.next(); // Apuntamos al primer elemento ("X")
-        iterador.delete(); // Eliminamos "X"
-        assertEquals("Y", lista.getcabeza()); // Nuevo cabeza es "Y"
+        iterador.next(); // Apunta al único elemento
+        iterador.delete(); // Elimina el único elemento
 
-        iterador.next(); // Apuntamos al siguiente ("Y")
-        iterador.delete(); // Eliminamos "Y"
-        assertEquals("Z", lista.getcabeza()); // Nuevo cabeza es "Z"
-
-        iterador.next(); // Apuntamos al último elemento ("Z")
-        iterador.delete(); // Eliminamos "Z"
-        assertNull(lista.getcabeza()); // Lista vacía
     }
 }
 

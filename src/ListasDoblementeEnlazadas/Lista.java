@@ -73,7 +73,7 @@ public class Lista<T> implements ListaIterador<T> {
 
     @Override
     public T getcabeza() {
-        return (cabeza != null) ? cabeza.dato : null;
+        return (cabeza != null) ? (T) cabeza : null;
     }
 
     @Override
@@ -90,7 +90,7 @@ public class Lista<T> implements ListaIterador<T> {
 
     @Override
     public T getcola() {
-        return (cola != null) ? cola.dato : null;
+        return (cola != null) ? (T) cola: null;
     }
 
     @Override
